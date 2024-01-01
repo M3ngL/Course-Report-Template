@@ -1,0 +1,116 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+\documentclass{article}
+
+% 导言区
+\usepackage{fontspec} %字体
+\usepackage{setspace} % 行距
+\usepackage[normalem]{ulem} % 横线
+\usepackage{graphicx}  % 用于插入图片
+\usepackage{geometry}  % 用于调整页面布局
+\usepackage{float}  % 图片悬浮布局
+\usepackage{fancyhdr} % 页眉页脚
+\usepackage[export]{adjustbox} % 插入图片布局
+% \usepackage{multicol} % 正文一页两栏排版
+% \usepackage{paracol}  % 多栏排版
+\usepackage{enumitem} % 编号格式
+\usepackage{titletoc} % 自定义目录的样式和格式
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 页面布局设置
+\geometry{
+  a4paper,  % 纸张尺寸
+  left=2cm,  % 左边距
+  right=2cm,  % 右边距
+  top=2cm,  % 上边距
+  bottom=3cm,  % 下边距
+}
+
+% 目录样式
+\titlecontents{section} % 设置section级别的目录样式
+  [0pt] % 左边距
+  {\bfseries} % 字体样式
+  {\contentslabel{1.5em}} % 标签样式
+  {} % 无格式的代码
+  {\titlerule*[0.5pc]{.}\contentspage} % 填充样式和页码
+
+% 页眉Header
+\pagestyle{fancy}
+\fancyhf{} % 清空当前页眉设置
+\fancyhead[L]{Tsinghua University}
+\fancyfoot[C]{\ifnum\value{page}=1\else\thepage\fi} % 从第二页开始插入页码
+
+% 定义新命令
+% 横线文字居中
+\newcommand{\ulinefill}[1]{\uline{\hfill#1\hfill\hspace{0pt}}}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%封面设置
+\begin{titlepage}
+  
+  \centering
+  
+  % 标题
+  \Huge\bfseries Tsinghua University
+  
+  \vspace{1cm}
+  
+  % 副标题
+  \Huge\textsc{ Course Report} \\
+\vspace{1cm}
+
+\LARGE  
+  % 校徽LOGO
+\ \includegraphics[width=5cm]{logo.jpg}
+  \vspace{1.5cm}
+  
+  % 横线
+Class \ulinefill{\makebox[5cm]{Course Name}} \\
+  \vspace{0.75cm}
+Teacher \ulinefill{\makebox[5cm]{Teacher's name}} \\
+  \vspace{0.75cm}
+College \ulinefill{\makebox[5cm]{School of Information Science and Technology}} \\
+\vspace{0.75cm}
+Major \ulinefill{\makebox[5cm]{Computer Science}} \\
+  \vspace{0.75cm}
+Name \ulinefill{Your name} \\
+  \vspace{0.75cm}
+Student ID \ulinefill{Your ID \qquad} \\
+  \vspace{0.75cm}
+Score \ulinefill{} \\
+    \vspace{2.5cm}
+
+
+\hfill
+  \begin{minipage}[t]{0.4\textwidth}
+    \begin{flushright}
+      \large Date: 2024.1
+    \end{flushright}
+  \end{minipage}
+\vspace{2cm}
+
+\end{titlepage}
+
+
+\tableofcontents
+  
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 正文内容
+\section{First section}
+\setcounter{page}{1} % 将第二页的页码设为1
+\rfoot{\centering \thepage}
+
+\newpage
+
+\section{Second section}
+
+
+\end{document}
